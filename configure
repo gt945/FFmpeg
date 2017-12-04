@@ -321,6 +321,7 @@ External library support:
   --disable-vda            disable Apple Video Decode Acceleration code [autodetect]
   --disable-vdpau          disable Nvidia Video Decode and Presentation API for Unix code [autodetect]
   --disable-videotoolbox   disable VideoToolbox code [autodetect]
+  --disable-meson          disable Meson platform support [autodetect]
 
 Toolchain options:
   --arch=ARCH              select architecture [$arch]
@@ -1654,6 +1655,7 @@ HWACCEL_AUTODETECT_LIBRARY_LIST="
     videotoolbox
     v4l2_m2m
     xvmc
+    meson
 "
 
 HWACCEL_LIBRARY_NONFREE_LIST="
@@ -2819,6 +2821,8 @@ h264_vdpau_decoder_deps="vdpau"
 h264_vdpau_decoder_select="h264_decoder"
 h264_v4l2m2m_decoder_deps="v4l2_m2m h264_v4l2_m2m"
 h264_v4l2m2m_encoder_deps="v4l2_m2m h264_v4l2_m2m"
+h264_meson_decoder_deps="meson"
+h264_meson_encoder_deps="meson"
 hevc_cuvid_decoder_deps="cuda cuvid"
 hevc_cuvid_decoder_select="hevc_mp4toannexb_bsf"
 hevc_mediacodec_decoder_deps="mediacodec"
@@ -2834,6 +2838,7 @@ hevc_vaapi_encoder_deps="VAEncPictureParameterBufferHEVC"
 hevc_vaapi_encoder_select="vaapi_encode golomb"
 hevc_v4l2m2m_decoder_deps="v4l2_m2m hevc_v4l2_m2m"
 hevc_v4l2m2m_encoder_deps="v4l2_m2m hevc_v4l2_m2m"
+hevc_meson_encoder_deps="meson"
 mjpeg_cuvid_decoder_deps="cuda cuvid"
 mjpeg_vaapi_encoder_deps="VAEncPictureParameterBufferJPEG"
 mjpeg_vaapi_encoder_select="vaapi_encode jpegtables"
@@ -3279,6 +3284,7 @@ zmq_filter_deps="libzmq"
 zoompan_filter_deps="swscale"
 zscale_filter_deps="libzimg const_nan"
 scale_vaapi_filter_deps="vaapi VAProcPipelineParameterBuffer"
+scale_meson_filter_deps="meson"
 
 # examples
 avio_dir_cmd_deps="avformat avutil"
@@ -6256,6 +6262,9 @@ enabled vdpau &&
 
 enabled vdpau &&
     check_lib vdpau_x11 "vdpau/vdpau.h vdpau/vdpau_x11.h" vdp_device_create_x11 -lvdpau -lX11
+
+enabled meson &&
+    check_lib meson IONmem.h CMEM_init -lmesonmedia
 
 enabled crystalhd && check_lib crystalhd "stdint.h libcrystalhd/libcrystalhd_if.h" DtsCrystalHDVersion -lcrystalhd
 

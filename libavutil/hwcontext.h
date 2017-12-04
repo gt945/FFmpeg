@@ -34,6 +34,7 @@ enum AVHWDeviceType {
     AV_HWDEVICE_TYPE_NONE,
     AV_HWDEVICE_TYPE_D3D11VA,
     AV_HWDEVICE_TYPE_DRM,
+    AV_HWDEVICE_TYPE_MESON,
 };
 
 typedef struct AVHWDeviceInternal AVHWDeviceInternal;

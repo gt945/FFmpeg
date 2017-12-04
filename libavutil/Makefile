@@ -168,6 +168,7 @@ OBJS-$(CONFIG_OPENCL)                   += opencl.o opencl_internal.o
 OBJS-$(CONFIG_VAAPI)                    += hwcontext_vaapi.o
 OBJS-$(CONFIG_VIDEOTOOLBOX)             += hwcontext_videotoolbox.o
 OBJS-$(CONFIG_VDPAU)                    += hwcontext_vdpau.o
+OBJS-$(CONFIG_MESON)                    += hwcontext_meson.o
 
 OBJS += $(COMPAT_OBJS:%=../compat/%)
 

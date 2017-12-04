@@ -53,6 +53,9 @@ static const HWContextType * const hw_table[] = {
 #if CONFIG_VIDEOTOOLBOX
     &ff_hwcontext_type_videotoolbox,
 #endif
+#if CONFIG_MESON
+    &ff_hwcontext_type_meson,
+#endif
     NULL,
 };
 
@@ -65,6 +68,7 @@ static const char *const hw_type_names[] = {
     [AV_HWDEVICE_TYPE_VAAPI]  = "vaapi",
     [AV_HWDEVICE_TYPE_VDPAU]  = "vdpau",
     [AV_HWDEVICE_TYPE_VIDEOTOOLBOX] = "videotoolbox",
+    [AV_HWDEVICE_TYPE_MESON] = "meson",
 };
 
 enum AVHWDeviceType av_hwdevice_find_type_by_name(const char *name)

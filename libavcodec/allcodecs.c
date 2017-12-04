@@ -198,6 +198,7 @@ static void register_all(void)
     REGISTER_ENCDEC (FLASHSV2,          flashsv2);
     REGISTER_DECODER(FLIC,              flic);
     REGISTER_ENCDEC (FLV,               flv);
+    REGISTER_DECODER(FLV_MESON,         flv_meson);
     REGISTER_DECODER(FMVC,              fmvc);
     REGISTER_DECODER(FOURXM,            fourxm);
     REGISTER_DECODER(FRAPS,             fraps);
@@ -210,6 +211,7 @@ static void register_all(void)
     REGISTER_DECODER(H263I,             h263i);
     REGISTER_ENCDEC (H263P,             h263p);
     REGISTER_DECODER(H263_V4L2M2M,      h263_v4l2m2m);
+    REGISTER_DECODER(H263_MESON,        h263_meson);
     REGISTER_DECODER(H264,              h264);
     REGISTER_DECODER(H264_CRYSTALHD,    h264_crystalhd);
     REGISTER_DECODER(H264_V4L2M2M,      h264_v4l2m2m);
@@ -221,11 +223,13 @@ static void register_all(void)
 #if FF_API_VDPAU
     REGISTER_DECODER(H264_VDPAU,        h264_vdpau);
 #endif
+    REGISTER_DECODER(H264_MESON,        h264_meson);
     REGISTER_ENCDEC (HAP,               hap);
     REGISTER_DECODER(HEVC,              hevc);
     REGISTER_DECODER(HEVC_QSV,          hevc_qsv);
     REGISTER_DECODER(HEVC_RKMPP,        hevc_rkmpp);
     REGISTER_DECODER(HEVC_V4L2M2M,      hevc_v4l2m2m);
+    REGISTER_DECODER(HEVC_MESON,        hevc_meson);
     REGISTER_DECODER(HNM4_VIDEO,        hnm4_video);
     REGISTER_DECODER(HQ_HQA,            hq_hqa);
     REGISTER_DECODER(HQX,               hqx);
@@ -257,7 +261,9 @@ static void register_all(void)
     REGISTER_DECODER(MPEG_XVMC,         mpeg_xvmc);
 #endif /* FF_API_XVMC */
     REGISTER_ENCDEC (MPEG1VIDEO,        mpeg1video);
+    REGISTER_DECODER(MPEG1_MESON,       mpeg1_meson);
     REGISTER_ENCDEC (MPEG2VIDEO,        mpeg2video);
+    REGISTER_DECODER(MPEG2_MESON,       mpeg2_meson);
     REGISTER_ENCDEC (MPEG4,             mpeg4);
     REGISTER_DECODER(MPEG4_CRYSTALHD,   mpeg4_crystalhd);
     REGISTER_DECODER(MPEG4_V4L2M2M,     mpeg4_v4l2m2m);
@@ -265,6 +271,7 @@ static void register_all(void)
 #if FF_API_VDPAU
     REGISTER_DECODER(MPEG4_VDPAU,       mpeg4_vdpau);
 #endif
+    REGISTER_DECODER(MPEG4_MESON,       mpeg4_meson);
     REGISTER_DECODER(MPEGVIDEO,         mpegvideo);
 #if FF_API_VDPAU
     REGISTER_DECODER(MPEG_VDPAU,        mpeg_vdpau);
@@ -372,6 +379,7 @@ static void register_all(void)
     REGISTER_DECODER(VC1_MMAL,          vc1_mmal);
     REGISTER_DECODER(VC1_QSV,           vc1_qsv);
     REGISTER_DECODER(VC1_V4L2M2M,       vc1_v4l2m2m);
+    REGISTER_DECODER(VC1_MESON,         vc1_meson);
     REGISTER_ENCODER(VC2,               vc2);
     REGISTER_DECODER(VCR1,              vcr1);
     REGISTER_DECODER(VMDVIDEO,          vmdvideo);
@@ -388,6 +396,7 @@ static void register_all(void)
     REGISTER_DECODER(VP9,               vp9);
     REGISTER_DECODER(VP9_RKMPP,         vp9_rkmpp);
     REGISTER_DECODER(VP9_V4L2M2M,       vp9_v4l2m2m);
+    REGISTER_DECODER(VP9_MESON,         vp9_meson);
     REGISTER_DECODER(VQA,               vqa);
     REGISTER_DECODER(BITPACKED,         bitpacked);
     REGISTER_DECODER(WEBP,              webp);
@@ -399,6 +408,7 @@ static void register_all(void)
 #if FF_API_VDPAU
     REGISTER_DECODER(WMV3_VDPAU,        wmv3_vdpau);
 #endif
+    REGISTER_DECODER(WMV3_MESON,        wmv3_meson);
     REGISTER_DECODER(WMV3IMAGE,         wmv3image);
     REGISTER_DECODER(WNV1,              wnv1);
     REGISTER_DECODER(XAN_WC3,           xan_wc3);
@@ -708,6 +718,8 @@ static void register_all(void)
     REGISTER_DECODER(VP9_CUVID,         vp9_cuvid);
     REGISTER_DECODER(VP9_MEDIACODEC,    vp9_mediacodec);
     REGISTER_ENCODER(VP9_VAAPI,         vp9_vaapi);
+    REGISTER_ENCODER(H264_MESON,        h264_meson);
+    REGISTER_ENCODER(HEVC_MESON,        hevc_meson);
 
     /* parsers */
     REGISTER_PARSER(AAC,                aac);

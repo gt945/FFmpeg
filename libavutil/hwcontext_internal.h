@@ -165,5 +165,6 @@ extern const HWContextType ff_hwcontext_type_qsv;
 extern const HWContextType ff_hwcontext_type_vaapi;
 extern const HWContextType ff_hwcontext_type_vdpau;
 extern const HWContextType ff_hwcontext_type_videotoolbox;
+extern const HWContextType ff_hwcontext_type_meson;
 
 #endif /* AVUTIL_HWCONTEXT_INTERNAL_H */
